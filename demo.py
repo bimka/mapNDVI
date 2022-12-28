@@ -1,10 +1,11 @@
+import os
 from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt, make_path_filter
 import glob
 import rasterio as rio
 
-user = 'mintdragonevo'
-password = 'k5h46g3kt4'
-geojson_path = 'map.geojson'
+user = os.environ.get("USER")
+password = os.environ.get("PASSWORD")
+geojson_path = os.environ.get("GEOJSON_PATH")
 
 def get_map_images(geojson_path):
     ''' Функция скачивает последние  изображения карты в красном, 
